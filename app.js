@@ -11,7 +11,9 @@ var users = require('./routes/users');
 
 var app = express();
 var server = require('http').createServer(app)
-server.listen(3030)
+server.listen(3030,function(){
+  console.log('node server is run at port:3030');
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
