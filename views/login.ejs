@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://i.tq121.com.cn/c/bootstrap.css"/>
+    <style>
+        body{
+            font-family: "Microsoft Yahei";
+            margin-left:auto;
+            margin-right:auto;
+            margin-TOP:100PX;
+            width:20em;
+        }
+    </style>
+</head>
+<body>
+
+<!--下面是用户名输入框-->
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input id="userName" type="text" class="form-control" placeholder="报上大名" aria-describedby="basic-addon1">
+</div>
+<br>
+<!--下面是密码输入框-->
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input id="depart" type="text" class="form-control" placeholder="部门" aria-describedby="basic-addon1">
+</div>
+<br>
+<!--下面是登陆按钮,包括颜色控制-->
+<button id="btn" type="button" style="width:280px;background: #6eafd7; color:#fff; font-size: 18px" class="btn btn-default" >登 录</button>
+<script>
+    document.getElementById('btn').onclick = function(){
+        var name = document.getElementById('userName').value;
+        var depart = document.getElementById('depart').value;
+//        console.log(name,depart,encodeURI(name));
+        if(!name){
+            alert("不写名字没奖品哦！^_^")
+            return;
+        }
+        window.open('http://localhost:3030/prize?name='+encodeURI(name)+"&depart="+encodeURI(depart),'_self');
+
+    }
+</script>
+
+</body>
+</html>
